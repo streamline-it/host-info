@@ -1,0 +1,17 @@
+*****************************************************************************
+* Host information for { ansible_fqdn  }
+*
+*
+* { ansible_managed }
+*
+*****************************************************************************
+
+Roles applied to this host:
+
+{% for item in host_info_roles_applied %}
+        {{ item }}
+{% end for %}
+
+
+Host initially configured with Ansible on: {{ host_info_initial_config_date }}
+

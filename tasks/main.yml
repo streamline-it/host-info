@@ -1,0 +1,7 @@
+---
+host_info_filepath: /root/hostinfo.txt
+
+host_info_roles_applied:
+  - role name
+
+host_info_intial_config_date: 03/03/2025
