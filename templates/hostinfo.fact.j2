@@ -1,17 +1,9 @@
-*****************************************************************************
-* Host information for { ansible_fqdn  }
-*
-*
-* { ansible_managed }
-*
-*****************************************************************************
-
-Roles applied to this host:
-
+[custom host facts]
 {% for item in host_info_roles_applied %}
-        {{ item }}
-{% end for %}
+role{{ loop.index }} = {{ item }}
+{% endfor %}
 
-
-Host initially configured with Ansible on: {{ host_info_initial_config_date }}
+ansible_dev = {{ host_info_ansible_dev }}
+ansible_dev_email_address = {{ host_info_ansible_dev_email_address }}
+host_first_configured_date = {{ host_info_initial_config_date }}
 

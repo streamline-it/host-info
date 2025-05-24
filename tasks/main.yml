@@ -1,7 +1,16 @@
----
-host_info_filepath: /root/hostinfo.txt
+- name: ensure the facts.d directory exists
+  ansible.builtin.file:
+    path: "{{ host_info_facts_directory }}"
+    owner: root
+    group: "{{ host_info_root_group }}"
+    state: directory
 
-host_info_roles_applied:
-  - role name
+- name: ensure the host information exists in a custom .fact file
+  ansible.builtin.template:
+    src: "{{ host_info_fact_filename }}.j2"
+    dest: "{{ host_info_facts_directory }}/{{ host_info_fact_filename }}"
 
-host_info_intial_config_date: 03/03/2025
+- name: ensure the host information exists in a custom text file
+  ansible.builtin.template:
+    src: "{{ host_info_text_filename }}.j2"
+    dest: "{{ host_info_text_directory }}/{{ host_info_text_filename }}"

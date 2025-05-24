@@ -1,7 +1,18 @@
 ---
-host_info_filepath: /root/hostinfo.txt
+host_info_text_directory: /root
 
+host_info_facts_directory: /etc/ansible/facts.d
+
+host_info_text_filename: hostinfo.txt
+host_info_fact_filename: hostinfo.fact
+
+# enumerate all applied roles
 host_info_roles_applied:
-  - role name
+  - 
 
-host_info_intial_config_date: 03/03/2025
+# change as needed, for example in a FreeBSD system this will be wheel
+host_info_root_group: root
+
+host_info_ansible_dev: 
+host_info_ansible_dev_email_address:
+host_info_initial_config_date: 03/03/2025

@@ -1,0 +1,17 @@
+# ***************************************************************************** 
+# * Host information for {{ ansible_fqdn  }}
+# *
+# *
+# * {{ ansible_managed }}
+# *
+# *****************************************************************************
+
+Roles Applied: 
+{% for item in host_info_roles_applied %}
+{{ item }}
+{% endfor %}
+
+Ansible Developer Name:  {{ host_info_ansible_dev }}
+Ansible Developer Email: {{ host_info_ansible_dev_email_address }}
+Host First configured on: {{ host_info_initial_config_date }}
+
