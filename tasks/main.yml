@@ -1,3 +1,6 @@
+- name: call tasks to check assertions
+  ansible.builtin.include_tasks: asserts.yml
+
 - name: ensure the facts.d directory exists
   ansible.builtin.file:
     path: "{{ host_info_facts_directory }}"

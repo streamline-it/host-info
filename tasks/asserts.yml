@@ -1,0 +1,22 @@
+---
+- name: ensure key variables are defined and are defaulted to appropriate values
+  ansible.builtin.assert:
+    that:
+      - host_info_text_directory is defined
+      - host_info_text_directory is truthy
+      - host_info_facts_directory is defined
+      - host_info_facts_directory is truthy
+      - host_info_text_filename is defined
+      - host_info_text_filename is truthy
+      - host_info_fact_filename is defined
+      - host_info_fact_filename is truthy
+      - host_info_roles_applied is defined
+      - host_info_root_group is defined
+      - host_info_root_group is truthy
+      - host_info_ansible_dev is defined
+      - host_info_ansible_dev is truthy
+      - host_info_ansible_dev_email_address is defined
+      - host_info_ansible_dev_email_address is truthy
+      - host_info_initial_config_date is defined
+      - host_info_initial_config_date is truthy
+    fail_msg: "Ensure key variables are defined and have appropriate values"
